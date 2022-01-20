@@ -8,9 +8,9 @@
 </head>
 <body>
     <article>
-        <h1>TITOLO DEL BLOG</h1>
+        <h1>>>TITOLO DEL BLOG<<</h1>
         <section>
-            <h2>Articolo sul latino</h2>
+            <h2>Articolo in latino</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident aut voluptates praesentium sint! Adipisci vel repellat possimus, amet hic officiis id quas molestias natus enim perferendis nostrum, deleniti atque quo.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, explicabo magnam facere aut voluptatibus architecto modi porro harum fugit assumenda esse nihil itaque nemo quibusdam eveniet. Tenetur dolore cum vel?</p>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus deleniti consectetur veritatis hic tempora iste, eveniet maiores distinctio sit placeat cumque quam, eum illo in doloremque! Autem ab itaque mollitia!</p>
@@ -22,9 +22,32 @@
     </article>
 
     <footer>
-        <form action="">
-
-
+        <form action="#" method="get">
+            <h2>Form!</h2>
+            <div>
+                <label for="name">
+                    Inserisci il tuo nome:
+                    <input type="text" id="name" name="name" placeholder="your name">
+                </label>
+            </div>
+            <div> 
+                <label for="surname">
+                    Inserisci il tuo cognome:
+                    <input type="text" id="surname" name="surname" placeholder="your surname">
+                </label>
+            </div>
+            <div>
+                <label for="email">
+                    Inserisci la tua email:
+                    <input type="email" id="email" name="email" style="width:200px" placeholder="your email (OBBLIGATORIO)" required >
+                </label>
+                <footer>
+                    <label for="invio">
+                        Grazie per aver compilato il form!
+                        <button type="submit" id="invio">INVIO</button>
+                    </label>
+                </footer>
+            </div>
         </form>
     </footer>
 </body>
