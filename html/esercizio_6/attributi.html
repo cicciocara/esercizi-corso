@@ -17,7 +17,7 @@
         <div>
             <label for="input">
                 <span>Scegli il numero da 0 a 100:</span>
-                <input type="number" id="input" name="input" min="0" max="100" step="2">
+                <input type="number" id="input" name="input" min="0" max="100" step="2" autofocus>
             </label>
         </div>
         <div>
@@ -42,6 +42,14 @@
                     </li>
                 </ul>
             </label>
+            <div>
+                <form>
+                    <label for="date">Quando sei disponibile per un incontro?
+                      <input type="datetime-local" id="date" name="date" min="06-10-2001" max="06-10-2150">
+                    </label>
+                    <input type="reset"  value="Resetta il form">
+                </form>
+            </div>
         </div>
     </main>
 </body>
