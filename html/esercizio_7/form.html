@@ -68,6 +68,64 @@
                     </select>
                 </label>
             </div>
+            <div id="vantaggi-PRO">
+                <label for="vantaggi-SI">
+                    Aggiungere i vantaggi PRO?
+                    <button id="vantaggi-SI" name="vantaggi-SI">SI</button>
+                </label>
+                <label for="vantaggi-NO">
+                    <button id="vantaggi-NO" name="vantaggi-NO">NO</button>
+                </label>
+            </div>
+            <div>
+                <h4>INSERISCI LE INFORMAZIONI RIGUARDANTI LA TUA CARTA DI CREDITO:</h4>
+                <span><strong>dettagli carta:</strong></span> <br><br>
+                <div>
+                    <label for="tipo-carta">
+                        *tipo di carta:
+                        <select id="tipo-carta">
+                            <option value="visa">Visa</option>
+                            <option value="mastercad">Mastercard</option>
+                            <option value="american-express">American-express</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label for="numero-carta">
+                         *numero carta:
+                        <input type="text" id="numero-carta" name="numero-carta">
+                    </label>
+                </div>
+                <div>
+                    <label for="data-scadenza">
+                         *data di scadenza:
+                        <input type="date" id="data-scadenza" name="data-scadenza">
+                    </label>
+                </div>
+                <div>
+                    <label for="CVC">
+                        *Inserisci il CVC
+                        <input type="number" id="CVC" name=CVC required>
+                    </label>
+                </div>
+                <div id="titolare-carta">
+                    <label for="titolare-carta-nome">
+                         *titolare della carta: <br>
+                         *Nome:
+                        <input type="text" id="titolare-carta-nome" name="titolare-carta-nome" required>
+                    </label>
+                    <label for="titolare-carta-cognome">
+                        *Cognome:
+                       <input type="text" id="titolare-carta-cognome" name="titolare-carta-cognome" required>
+                   </label>
+                </div>
+                <div>
+                    <label for="indirizzo-fatturazione">
+                        *Inserisci l'indirizzo di fatturazione:
+                        <input type="text" id="indirizzo-fatturazione" name="indirizzo-fatturazione" required>
+                    </label>
+                </div>
+            </div>
         </form>
     </main>
 </body>
