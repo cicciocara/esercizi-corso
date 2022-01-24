@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Francesco Caramagno">
+    <meta name="description" content="Form">
+    <title>Form</title>
+</head>
+<body>
+    <header>
+        <blockquote>
+            <h1>Benvenuto nel nostro form anagrafico!!</h1>
+            <blockquote>
+                <h2>La invitiamo a dedicarci pochi minuti per conoscerci meglio..</h2>
+            </blockquote>
+        </blockquote>
+    </header>
+    <main>
+        <form action="#" method="get">
+            <div>
+                <label for="name">
+                    Qual è il tuo nome?
+                    <input type="text" id="name" name="name" required>
+                </label>
+            </div> 
+            <div>
+                <label for="surname">
+                    Qual è il tuo cognome?
+                    <input type="text" id="surname" name="surname" required>
+                </label>
+            </div>
+            <div>
+                <label for="bd">
+                    Quando sei nato?
+                    <input type="date" id="bd" name="bd" required>
+                </label>
+            </div>      
+            <div>
+                <label for="number">
+                    Inserisci il tuo numero di telefono <br>
+                            <label for="prefisso">
+                                Prefisso:
+                                    <input type="text" id="prefisso" name="number" maxlength="3" style="width:28px" required>
+                            </label>
+                    <input type="number" id="number" name="number" min="0" max="9" maxlength="10" style="width:100px" required>
+                </label>
+            </div>    
+            <div>
+                <label for="email">
+                    Inserisci la tua email:
+                    <input type="email" id="email" name="email" required>
+                </label> <br>
+                <label for="password">
+                    Scegli una password:
+                    <input type="password" id="password" name="password" required>
+                </label>
+            </div>
+            <div>
+                <label for="subscription">
+                    Scegli un piano di abbonamento:
+                    <select id="subscription" name="subscription">
+                        <option value="free">free-subsctiption</option>
+                        <option value="basic">basic-subscription: 1.50$/month</option>
+                        <option value="medium">medium-subscription: 2.80$/month</option>
+                        <option value="plus+">plus+-subscription: 5$/month</option>
+                    </select>
+                </label>
+            </div>
+            <div id="vantaggi-PRO">
+                <label for="vantaggi-SI">
+                    Aggiungere i vantaggi PRO?
+                    <button id="vantaggi-SI" name="vantaggi-SI">SI</button>
+                </label>
+                <label for="vantaggi-NO">
+                    <button id="vantaggi-NO" name="vantaggi-NO">NO</button>
+                </label>
+            </div>
+            <div>
+                <h4>INSERISCI LE INFORMAZIONI RIGUARDANTI LA TUA CARTA DI CREDITO:</h4>
+                <span><strong>dettagli carta:</strong></span> <br><br>
+                <div>
+                    <label for="tipo-carta">
+                        *tipo di carta:
+                        <select id="tipo-carta">
+                            <option value="visa">Visa</option>
+                            <option value="mastercad">Mastercard</option>
+                            <option value="american-express">American-express</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label for="numero-carta">
+                         *numero carta:
+                        <input type="text" id="numero-carta" name="numero-carta">
+                    </label>
+                </div>
+                <div>
+                    <label for="data-scadenza">
+                         *data di scadenza:
+                        <input type="date" id="data-scadenza" name="data-scadenza">
+                    </label>
+                </div>
+                <div>
+                    <label for="CVC">
+                        *Inserisci il CVC
+                        <input type="number" id="CVC" name=CVC required>
+                    </label>
+                </div>
+                <div id="titolare-carta">
+                    <label for="titolare-carta-nome">
+                         *titolare della carta: <br>
+                         *Nome:
+                        <input type="text" id="titolare-carta-nome" name="titolare-carta-nome" required>
+                    </label>
+                    <label for="titolare-carta-cognome">
+                        *Cognome:
+                       <input type="text" id="titolare-carta-cognome" name="titolare-carta-cognome" required>
+                   </label>
+                </div>
+                <div>
+                    <label for="indirizzo-fatturazione">
+                        *Inserisci l'indirizzo di fatturazione:
+                        <input type="text" id="indirizzo-fatturazione" name="indirizzo-fatturazione" required>
+                    </label>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
