@@ -11,46 +11,56 @@
 <body>
     <h1>ATTRIBUTI</h1>
     <main>
-        <div>
-            <span>This button is unavaible!! <button type="submit" name="button" disabled>INVIO</button></span>
-        </div>
-        <div>
-            <label for="input">
-                <span>Scegli il numero da 0 a 100:</span>
-                <input type="number" id="input" name="input" min="0" max="100" step="2" autofocus>
-            </label>
-        </div>
-        <div>
-            <label for="checkbox">
-                <p>Scegli uno o più numeri:</p>
-                <ul>
-                    <li>
-                        <input type="checkbox" id="checkbox" name="checkbox" value="7">
-                        7
-                    </li>
-                    <li>
-                        <input type="checkbox" id="checkbox" name="checkbox" value="14" checked>
-                        14
-                    </li>
-                    <li>
-                        <input type="checkbox" id="checkbox" name="checkbox" value="21">
-                        21
-                    </li>
-                    <li>
-                        <input type="checkbox" id="checkbox" name="checkbox" value="28">
-                        28
-                    </li>
-                </ul>
-            </label>
+        <form action="#">
             <div>
-                <form>
-                    <label for="date">Quando sei disponibile per un incontro?
-                      <input type="datetime-local" id="date" name="date" min="06-10-2001" max="06-10-2150">
-                    </label>
-                    <input type="reset"  value="Resetta il form">
-                </form>
+                <span>This button is unavaible!! 
+                <button type="submit" name="button" disabled>INVIO</button></span>
             </div>
-        </div>
+            <div>
+                <label for="input">
+                    Scegli il numero da 0 a 100:
+                    <input type="text" id="input" name="input" maxlength="3" autofocus>
+                </label>
+            </div>
+            <div>
+                <label for="checkbox">
+                    <p>Scegli uno o più numeri:</p>
+                    <ul>
+                        <li>
+                            <input type="checkbox" id="checkbox" name="checkbox" value="7">
+                            7
+                        </li>
+                        <li>
+                            <input type="checkbox" id="checkbox" name="checkbox" value="14" checked>
+                            14
+                        </li>
+                        <li>
+                            <input type="checkbox" id="checkbox" name="checkbox" value="21">
+                            21
+                        </li>
+                        <li>
+                            <input type="checkbox" id="checkbox" name="checkbox" value="28">
+                            28
+                        </li>
+                    </ul>
+                </label>
+            </div>
+            <div>
+                <label for="date-1">
+                    Quando sei disponibile per un incontro? <br>
+                   * <input id="date-1" data-day="Lunedi 31">
+                </label> <br>
+                <label for="date-2">
+                   * <input id="date-2" data-day="Martedi 1">
+                </label> <br>
+                <label for="date-3">
+                   * <input id="date-3" data-day="Mercoledi 2">
+                </label> <br>
+            </div>
+            <footer>
+                <button type="submit">INVIA IL FORM</button>
+            </footer>
+        </form>
     </main>
 </body>
 </html>
