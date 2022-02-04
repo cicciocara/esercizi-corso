@@ -8,7 +8,7 @@
 body{
     display: grid;
     grid-template-columns: minmax(0,75vw) minmax(0,25vw);
-    grid-template-rows: minmax(0,10vh) minmax(0,65vh) minmax(0,10vh);
+    grid-template-rows: minmax(0,9vh) minmax(0,65vh) minmax(0,10vh);
     row-gap: 16px;
     column-gap: 8px;
     grid-template-areas:
@@ -92,11 +92,15 @@ article > picture{
 .lower-nav{              /*lower-nav*/
     grid-area: lower-nav;
     background-color:#012345;
+    position: relative;
 }
 
 .footer-label{
     background-color: #012345;
     color: white;
+    position: absolute;
+    right: 15px;
+    top: 35%;   /*SISTEMARE MEGLIO LE MISURE*/
 }
 .submit-all{
     color: white;
