@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: #fafbff ;
+}
+
+body{
+    display: grid;
+    grid-template-columns: minmax(0,75vw) minmax(0,25vw);
+    grid-template-rows: minmax(0,10vh) minmax(0,65vh) minmax(0,10vh);
+    row-gap: 16px;
+    column-gap: 8px;
+    grid-template-areas:
+    "upper-nav upper-nav"
+    "section aside"
+    "lower-nav lower-nav"
+}
+
+.group-nav{
+    position: absolute;
+    background-color: #234567;
+    left: 0;
+    top:35%;
+    margin-left:3vw;
+}
+
+.upper-nav{                 /*upper-nav*/
+    position: relative;
+    grid-area: upper-nav;
+    background-color: #234567;
+}
+
+.upper-nav  a{
+    color: white;
+    background-color: #234567;
+    text-decoration: none;
+    margin: 10px;
+}
+
+
+.upper-nav  a:hover{
+    transition: 0.3s;
+    color: #ff784d;
+}
+
+
+section{                 /*section*/
+    grid-area: section;
+    margin-left: 8px;
+}
+
+section > article{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0,15%) minmax(0,20%) minmax(0,20%) minmax(0,20%) minmax(0.15%);
+    row-gap: 16px;
+    column-gap: 8px;
+    grid-template-areas:
+    "h2"
+    "p1"
+    "p2"
+    "p3"
+    "picture"
+}
+
+article > h2{
+    grid-area: h2;
+}
+
+article > .p1{
+    grid-area: p1;
+}
+
+article > .p2{
+    grid-area: p2;
+}
+
+article > .p3{
+    grid-area: p3;
+}
+
+article > picture{
+    grid-area: picture;
+}
+
+.aside{                   /*aside*/
+    grid-area: aside;
+    background-color: #edefff;
+}
+
+.lower-nav{              /*lower-nav*/
+    grid-area: lower-nav;
+    background-color:#012345;
+}
+
+.footer-label{
+    background-color: #012345;
+    color: white;
+}
+.submit-all{
+    color: white;
+    background-color:#ff784d;
+    padding: 2px 4px;
+}
+
+.submit-all:hover{
+    transition: 0.4s;
+    color: #ff784d;
+    background-color: white;
+}
