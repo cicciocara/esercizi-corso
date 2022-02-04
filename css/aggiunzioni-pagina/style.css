@@ -1,115 +1,126 @@
 *{
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
-    background-color: #fafbff ;
+    padding: 0;
+}
+
+article, aside, footer{
+    padding: 8px 16px;
 }
 
 body{
+    margin: 0;
+    background-color: #fafbff;
     display: grid;
-    grid-template-columns: minmax(0,75vw) minmax(0,25vw);
-    grid-template-rows: minmax(0,9vh) minmax(0,65vh) minmax(0,10vh);
-    row-gap: 16px;
-    column-gap: 8px;
+    grid-template-columns: 75vw 25vw;
+    grid-template-rows: 1fr auto 1fr; 
     grid-template-areas:
-    "upper-nav upper-nav"
-    "section aside"
-    "lower-nav lower-nav"
+    "nav nav"
+    "main aside"
+    "footer footer"
 }
 
-.group-nav{
-    position: absolute;
+nav{
+    grid-area: nav;
     background-color: #234567;
-    left: 0;
-    top:35%;
-    margin-left:3vw;
+    height: 65px;
 }
 
-.upper-nav{                 /*upper-nav*/
-    position: relative;
-    grid-area: upper-nav;
+nav > ul{
     background-color: #234567;
+    height: 100%;
+    display:flex;
+    align-items: center;
+    margin-left: 40px;
 }
 
-.upper-nav  a{
+nav > ul > a{
+    background-color: #234567;
     color: white;
-    background-color: #234567;
     text-decoration: none;
-    margin: 10px;
+    padding: 0 10px;
 }
 
-
-.upper-nav  a:hover{
-    transition: 0.3s;
+nav a:hover{
+    transition: 0.3s ease;
     color: #ff784d;
 }
 
-
-section{                 /*section*/
-    grid-area: section;
-    margin-left: 8px;
-}
-
-section > article{
+main > article{
+    grid-area: main;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: minmax(0,15%) minmax(0,20%) minmax(0,20%) minmax(0,20%) minmax(0.15%);
-    row-gap: 16px;
-    column-gap: 8px;
+    grid-template-columns: min-content auto;
+    grid-template-rows: auto 1fr;
     grid-template-areas:
-    "h2"
-    "p1"
-    "p2"
-    "p3"
-    "picture"
+    "text text"
+    "img1 img2"
 }
 
-article > h2{
-    grid-area: h2;
+.text > h2{
+    margin: 20px 0;
 }
 
-article > .p1{
-    grid-area: p1;
+.text > p{
+    margin: 15px 0;
 }
 
-article > .p2{
-    grid-area: p2;
+.text {
+	grid-area: text;
 }
 
-article > .p3{
-    grid-area: p3;
+.img1 {
+	grid-area: img1;
+	max-height: 300px;
+	object-fit: contain;
 }
 
-article > picture{
-    grid-area: picture;
+.img2 {
+	grid-area: img2;
+	max-height: 300px;
+	object-fit: contain;
 }
 
-.aside{                   /*aside*/
+aside{
     grid-area: aside;
-    background-color: #edefff;
 }
 
-.lower-nav{              /*lower-nav*/
-    grid-area: lower-nav;
-    background-color:#012345;
+/* footer{
+    grid-area: footer;
+    background-color: #012345;
+    height: 65px;
     position: relative;
 }
 
-.footer-label{
+footer > .footer-label{
     background-color: #012345;
     color: white;
     position: absolute;
-    right: 15px;
-    top: 35%;   /*SISTEMARE MEGLIO LE MISURE*/
+    right: 20px;
+    top: 25px;
+} */
+
+footer{
+    height: 65px;
+    width: 100vw;
+    background-color: #234567;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
-.submit-all{
+
+.footer-label{
     color: white;
+}
+
+.submit-all{
+    padding: 2px 5px;
     background-color:#ff784d;
-    padding: 2px 4px;
+    color: white;
 }
 
 .submit-all:hover{
-    transition: 0.4s;
-    color: #ff784d;
+    transition: 0.4s ease;
     background-color: white;
+    color: #ff784d;
 }
+
