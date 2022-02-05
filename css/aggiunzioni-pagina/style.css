@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 article, aside, footer{
@@ -84,6 +85,10 @@ aside{
     grid-area: aside;
 }
 
+aside img{
+    width: 100%;
+}
+
 /* footer{
     grid-area: footer;
     background-color: #012345;
@@ -124,3 +129,34 @@ footer{
     color: #ff784d;
 }
 
+@media (max-width: 1060px) {
+	body {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr auto auto 1fr;
+		grid-template-areas:
+            "nav"
+            "main"
+            "aside"
+            "footer";
+	}
+
+	main > article {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto 1fr 1fr;
+		grid-template-areas:
+            "text"
+            "img1"
+            "img2";
+	}
+
+	aside {
+		padding-top: 32px;
+		padding-bottom: 32px;
+	}
+
+	.img1,
+	.img2 {
+		max-height: initial;
+		width: 100%;
+	}
+}
