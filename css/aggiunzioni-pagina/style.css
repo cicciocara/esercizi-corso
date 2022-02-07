@@ -23,6 +23,37 @@ body{
 
 nav{
     grid-area: nav;
+    display: grid;
+    background-color: #234567;
+    grid-template-columns: 20% 80%;
+    grid-template-areas:
+    "logo link";
+}
+
+nav > .logo{
+    border: 2px solid black;
+}
+
+nav > .link{
+    height: 100%;
+    background-color:#234567;
+    padding-top: 21px;
+}
+
+.link > a{
+    padding-left: 15px;
+    color:white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+a:hover{
+    transition: 0.3s ease;
+    color:#ff784d;
+}
+  /*FLEX NAV */
+/* nav{
+    grid-area: nav;
     background-color: #234567;
     height: 65px;
 }
@@ -45,7 +76,7 @@ nav > ul > a{
 nav a:hover{
     transition: 0.3s ease;
     color: #ff784d;
-}
+} */
 
 main > article{
     grid-area: main;
@@ -89,21 +120,49 @@ aside img{
     width: 100%;
 }
 
-/* footer{
-    grid-area: footer;
-    background-color: #012345;
+footer{
     height: 65px;
-    position: relative;
+    width: 100vw;
+    background-color: #234567;
+    display: grid;
+    justify-content: end;
 }
 
-footer > .footer-label{
-    background-color: #012345;
-    color: white;
-    position: absolute;
-    right: 20px;
-    top: 25px;
-} */
+.footer-label{
+    width:600px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "email input button";
+}
 
+.footer-label > span{
+    grid-area: email;
+    text-align: end;
+    color: white;
+}
+
+#email{
+    grid-area: input;
+    height: 50%;
+}
+
+.submit-all{
+    grid-area: button;
+    height: 50%;
+    padding: 2px 5px;
+    background-color:#ff784d;
+    color: white;
+}
+
+.submit-all:hover{
+    transition: 0.4s ease;
+    background-color: white;
+    color: #ff784d;
+} 
+
+/* 
 footer{
     height: 65px;
     width: 100vw;
@@ -127,7 +186,7 @@ footer{
     transition: 0.4s ease;
     background-color: white;
     color: #ff784d;
-}
+} */
 
 @media (max-width: 1060px) {
 	body {
