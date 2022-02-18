@@ -4,7 +4,7 @@ body {
 
 :root{
     --bg-color:#ff8800;
-    --br-radius: 50px;
+    --br-radius: 100px;
     --side-size: 100px;
 }
 
@@ -12,5 +12,5 @@ body {
     width: var(--side-size);
     height: var(--side-size);
     background-color: var(--bg-color);
-    border-radius: var(--br-radius);
+    border-radius: calc(var(--side-size)/2);
 }
