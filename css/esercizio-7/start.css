@@ -19,13 +19,13 @@ body{
 
 #green{
     grid-area: header;
-    background-color: green;
+    background-color: #8ffda7;
 }
 
 /* LEFT-CENTRAL */
 #yellow{
     grid-area: left-central;
-    background-color: yellow;
+    background-color: #ffff92;
     display: grid;
 }
 
@@ -33,7 +33,7 @@ body{
 
 #red{
     grid-area: right-central;
-    background-color: red;
+    background-color: #ff919c;
     display: grid;
 }
 
@@ -87,7 +87,7 @@ li:last-child{
 /* FOOTER */
 #orange{
     grid-area: footer;
-    background-color: orange;
+    background-color: #ffc788;
 }
 
 /* ELEMENT-PADDING */
