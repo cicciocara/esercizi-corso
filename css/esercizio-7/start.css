@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 40vw 40vw 1fr;
+    grid-template-rows: calc(44vh/2) 44vh calc(44vh/2);
+    row-gap: 5vh;
+    column-gap: 5vh;
+    grid-template-areas: 
+    "header header header"
+    "left-central right-central aside"
+    "footer footer aside";
+}
+
+
+#green{
+    grid-area: header;
+    background-color: green;
+}
+
+/* LEFT-CENTRAL */
+#yellow{
+    grid-area: left-central;
+    background-color: yellow;
+    display: grid;
+}
+
+/* RIGHT-CENTRAL */
+
+#red{
+    grid-area: right-central;
+    background-color: red;
+    display: grid;
+}
+
+/* BOX-INSIDE CENTRALS */
+
+#yellow > ul,
+#red > ul{
+    align-self: start;
+    list-style: none;
+    display: grid;
+    row-gap: 30px;
+    column-gap: 30px;
+    grid-template-areas: 
+    "left-upper right-upper"
+    "left-lower right-lower";
+}
+
+#yellow > ul > li,
+#red > ul > li{
+    background-color: white;
+    padding: 20px 20px;
+    min-width: 150px;
+    max-width: 150px;
+}
+
+li:first-child{
+    grid-area: left-upper;
+    align-self: end;
+    justify-self: end;
+}
+li:nth-child(2){
+    grid-area: right-upper;
+    align-self: start;
+    justify-self: start;
+}
+li:nth-child(3){
+    grid-area: left-lower;
+    align-self: start;
+    justify-self: end;
+}
+li:last-child{
+    grid-area: right-lower;
+}
+
+/* ASIDE */
+#blue{
+    grid-area: aside;
+    background-color: blue;
+}
+
+/* FOOTER */
+#orange{
+    grid-area: footer;
+    background-color: orange;
+}
+
+/* ELEMENT-PADDING */
+
+#green > p,
+#yellow > p,
+#red > p,
+#blue > p,
+#orange > p{
+    padding: 25px 0 0 40px;
+}
+
