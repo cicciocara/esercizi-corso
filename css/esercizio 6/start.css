@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-columns: calc(100vw/6) 1fr;
+    grid-template-rows: 20vh 22vh 22vh 22vh;
+    column-gap: 4vh;
+    row-gap: 4vh;
+    grid-template-areas:
+    "header header"
+    "aside right-upper"
+    "aside right-central"
+    "aside right-lower"
+}
+/* HEADER--------------------------- */
+#yellow{
+    grid-area: header;
+    background-color: #ffff92;
+}
+
+#yellow > ul{
+    display:flex;
+    list-style: none;
+    margin: 0 15px;
+}
+
+#yellow > ul > li{
+   flex: 1;
+   background-color: white;
+   margin: 0 20px;
+   padding: 10px 10px;
+}
+
+#yellow > ul > li:nth-child(1){
+    flex: 3;
+}
+
+/* ASIDE------------------------------- */
+
+#blue{
+    grid-area: aside;
+    background-color: #98d2ff;
+}
+
+/* RIGHT-UPPER------------------------ */
+
+#orange{
+    grid-area: right-upper;
+    background-color: #ffc788;
+}
+
+/* RIGHT-CENTRAL----------------------- */
+
+#red{
+    grid-area: right-central;
+    background-color: #ff919c;
+}
+
+#red > ul{
+    display: flex;
+    list-style: none;
+    margin: 0 15px;
+}
+
+#red > ul > li{
+     background-color: white;
+     flex: 1;
+     margin: 0 20px;
+     padding: 10px 10px;
+}
+
+/* RIGHT-LOWER----------------------- */
+
+#green{
+    grid-area: right-lower;
+    background-color: #8ffda7;
+}
+
+#yellow > p,
+#blue > p,
+#orange > p,
+#red > p,
+#green > p{
+    padding: 20px;
+}
