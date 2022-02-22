@@ -18,8 +18,8 @@ body main {
 body main .left-card,
 body main .central-card,
 body main .right-card {
-  max-width: 20vw;
-  height: 500px;
+  width: 20vw;
+  height: 470px;
   border-radius: 15px;
   background-color: lightgrey;
 }
@@ -106,7 +106,57 @@ body main .left-card .description,
 body main .central-card .description,
 body main .right-card .description {
   padding: 0px 5px;
-  max-height: 310px;
+  max-height: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 1100px) {
+  body {
+    display: grid;
+    grid-template-areas: "main";
+  }
+  body main {
+    display: grid;
+    row-gap: 20px;
+    grid-template-areas: "left-card central-card" "right-card .";
+  }
+  body main .left-card {
+    grid-area: left-card;
+    width: 30vw;
+  }
+  body main .central-card {
+    grid-area: central-card;
+    width: 30vw;
+  }
+  body main .right-card {
+    grid-area: right-card;
+    width: 30vw;
+  }
+}
+@media screen and (max-width: 1100px) and (max-width: 720px) {
+  body {
+    display: grid;
+    grid-template-areas: "main";
+  }
+  body main {
+    grid-area: main;
+    display: grid;
+    grid-row: 10px;
+    grid-template-areas: "left-card" "central-card" "right-card";
+  }
+  body main .left-card {
+    grid-area: left-card;
+    width: 50vw;
+  }
+  body main .central-card {
+    grid-area: central-card;
+    width: 50vw;
+  }
+  body main .right-card {
+    grid-area: right-card;
+    width: 50vw;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

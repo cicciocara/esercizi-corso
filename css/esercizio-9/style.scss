@@ -19,7 +19,7 @@ body{
         .central-card,
         .right-card{
             width: 20vw;
-            height: 500px;
+            height: 470px;
             border-radius: 15px;
             background-color: lightgrey;
             
@@ -93,9 +93,72 @@ body{
            
             .description{
                 padding: 0px 5px;
-                max-height: 310px;  // p il contenitore e non il testo arriva a massimo 310px
+                max-height: 280px;
+                overflow: hidden;
+                text-overflow: ellipsis;
             } 
         }
         
+    }
+}
+
+@media screen and (max-width: 1100px){
+
+    body{
+        display: grid;
+           grid-template-areas: 
+           "main";
+
+        main{
+            display: grid;
+            row-gap: 20px;
+            grid-template-areas:
+            "left-card central-card"
+            "right-card .";
+
+            .left-card{
+                grid-area: left-card;
+                width: 30vw;
+            }
+            .central-card{
+                grid-area: central-card;
+                width: 30vw;
+            }
+            .right-card{
+                grid-area: right-card;
+                width: 30vw;
+            }
+        }
+    }  
+    
+    @media screen and (max-width: 720px){
+       body{
+           display: grid;
+           grid-template-areas: 
+           "main";
+           
+            main{
+                grid-area: main;
+                display: grid;
+                grid-row: 10px;
+                grid-template-areas: 
+                "left-card"
+                "central-card"
+                "right-card";
+    
+                .left-card{
+                    grid-area: left-card;
+                    width: 50vw;
+                }
+                .central-card{
+                    grid-area: central-card;
+                    width: 50vw;
+                }
+                .right-card{
+                    grid-area: right-card;
+                    width: 50vw;
+                }
+            }
+       }
     }
 }
