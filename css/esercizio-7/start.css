@@ -6,7 +6,7 @@
 
 body{
     display: grid;
-    grid-template-columns: 40vw 40vw 1fr;
+    grid-template-columns: 2fr 2fr 1fr;
     grid-template-rows: calc(44vh/2) 44vh calc(44vh/2);
     row-gap: 5vh;
     column-gap: 5vh;
