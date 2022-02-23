@@ -72,12 +72,12 @@ body main .right-card .header .right-header {
   justify-content: start;
   align-items: start;
 }
-body main .left-card .header .right-header .sospension-poins,
-body main .central-card .header .right-header .sospension-poins,
-body main .right-card .header .right-header .sospension-poins {
-  flex: 1;
-  align-self: end;
-  font-size: 1.5rem;
+body main .left-card .header .right-header .three-dots,
+body main .central-card .header .right-header .three-dots,
+body main .right-card .header .right-header .three-dots {
+  width: 20px;
+  background-color: grey;
+  border: 0px;
 }
 body main .left-card img,
 body main .central-card img,
@@ -90,17 +90,21 @@ body main .central-card .like-comment,
 body main .right-card .like-comment {
   margin-left: 20px;
   display: flex;
+  column-gap: 8px;
 }
-body main .left-card .like-comment .heart,
-body main .central-card .like-comment .heart,
-body main .right-card .like-comment .heart {
-  font-size: 1.2rem;
-  color: darkblue;
+body main .left-card .like-comment .like,
+body main .central-card .like-comment .like,
+body main .right-card .like-comment .like {
+  width: 20px;
+  background-color: lightgrey;
+  border: 0px;
 }
 body main .left-card .like-comment .comment,
 body main .central-card .like-comment .comment,
 body main .right-card .like-comment .comment {
-  color: darkblue;
+  width: 20px;
+  background-color: lightgrey;
+  border: 0px;
 }
 body main .left-card .description,
 body main .central-card .description,

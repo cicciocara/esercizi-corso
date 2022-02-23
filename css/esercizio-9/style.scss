@@ -64,10 +64,10 @@ body{
                     justify-content: start;
                     align-items: start;
 
-                    .sospension-poins{
-                        flex:1;
-                        align-self: end;
-                        font-size: 1.5rem;
+                    .three-dots{
+                        width: 20px;
+                        background-color: grey;
+                        border: 0px;
                     }
                 }
             }
@@ -80,14 +80,18 @@ body{
             .like-comment{
                 margin-left: 20px;
                 display: flex;
+                column-gap: 8px;
 
-                .heart{
-                   font-size: 1.2rem;
-                   color: darkblue;
+                .like{
+                   width: 20px;
+                   background-color: lightgrey;
+                   border: 0px;
                 }
 
                 .comment{
-                   color: darkblue;
+                    width: 20px;
+                    background-color: lightgrey;
+                    border: 0px;
                 }
             }
            
