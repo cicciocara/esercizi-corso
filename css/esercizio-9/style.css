@@ -5,117 +5,89 @@
 }
 
 body {
-  height: 100vh;
   display: flex;
   justify-content: center;
 }
 body main {
-  align-self: center;
+  margin-top: 100px;
   display: flex;
   column-gap: 20px;
   width: fit-content;
 }
-body main .left-card,
-body main .central-card,
-body main .right-card {
-  width: 20vw;
-  height: 470px;
+body main .card {
+  width: 30vw;
+  min-height: 500px;
   border-radius: 15px;
   background-color: lightgrey;
 }
-body main .left-card .header,
-body main .central-card .header,
-body main .right-card .header {
+body main .card .header {
   display: flex;
   justify-content: space-between;
   background-color: grey;
   border-radius: 15px 15px 0 0;
   padding: 5px;
 }
-body main .left-card .header .left-header,
-body main .central-card .header .left-header,
-body main .right-card .header .left-header {
+body main .card .header .left-header {
   display: flex;
 }
-body main .left-card .header .left-header .img,
-body main .central-card .header .left-header .img,
-body main .right-card .header .left-header .img {
+body main .card .header .left-header .img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   background-color: white;
 }
-body main .left-card .header .left-header .information,
-body main .central-card .header .left-header .information,
-body main .right-card .header .left-header .information {
+body main .card .header .left-header .information {
   margin-left: 5px;
   flex: 1;
   height: 50px;
   display: flex;
+  justify-content: center;
   flex-direction: column;
 }
-body main .left-card .header .left-header .information .name,
-body main .central-card .header .left-header .information .name,
-body main .right-card .header .left-header .information .name {
+body main .card .header .left-header .information .name {
   display: inline-block;
 }
-body main .left-card .header .left-header .information .date,
-body main .central-card .header .left-header .information .date,
-body main .right-card .header .left-header .information .date {
+body main .card .header .left-header .information .date {
   color: white;
   display: inline-block;
 }
-body main .left-card .header .right-header,
-body main .central-card .header .right-header,
-body main .right-card .header .right-header {
+body main .card .header .right-header {
   display: flex;
   justify-content: start;
   align-items: start;
 }
-body main .left-card .header .right-header .three-dots,
-body main .central-card .header .right-header .three-dots,
-body main .right-card .header .right-header .three-dots {
+body main .card .header .right-header .three-dots {
   width: 20px;
   background-color: grey;
   border: 0px;
 }
-body main .left-card img,
-body main .central-card img,
-body main .right-card img {
+body main .card img {
   max-width: 100%;
   min-width: 100%;
 }
-body main .left-card .like-comment,
-body main .central-card .like-comment,
-body main .right-card .like-comment {
+body main .card .like-comment {
   margin-left: 20px;
   display: flex;
   column-gap: 8px;
 }
-body main .left-card .like-comment .like,
-body main .central-card .like-comment .like,
-body main .right-card .like-comment .like {
+body main .card .like-comment .like {
   width: 20px;
   background-color: lightgrey;
   border: 0px;
 }
-body main .left-card .like-comment .comment,
-body main .central-card .like-comment .comment,
-body main .right-card .like-comment .comment {
+body main .card .like-comment .comment {
   width: 20px;
   background-color: lightgrey;
   border: 0px;
 }
-body main .left-card .description,
-body main .central-card .description,
-body main .right-card .description {
+body main .card .description {
   padding: 0px 5px;
   max-height: 280px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 768px) {
   body {
     display: grid;
     grid-template-areas: "main";
@@ -123,22 +95,28 @@ body main .right-card .description {
   body main {
     display: grid;
     row-gap: 20px;
-    grid-template-areas: "left-card central-card" "right-card .";
+    grid-template-areas: "card1 card2" "card3 .";
   }
-  body main .left-card {
-    grid-area: left-card;
-    width: 30vw;
+  body main .card:nth-child(3) .left-header .information h3, body main .card:nth-child(2) .left-header .information h3, body main .card:nth-child(1) .left-header .information h3 {
+    font-size: 0.8rem;
   }
-  body main .central-card {
-    grid-area: central-card;
-    width: 30vw;
+  body main .card:nth-child(3) .left-header .information p, body main .card:nth-child(2) .left-header .information p, body main .card:nth-child(1) .left-header .information p {
+    font-size: 0.8rem;
   }
-  body main .right-card {
-    grid-area: right-card;
-    width: 30vw;
+  body main .card:nth-child(1) {
+    grid-area: card1;
+    width: 40vw;
+  }
+  body main .card:nth-child(2) {
+    grid-area: card2;
+    width: 40vw;
+  }
+  body main .card:nth-child(3) {
+    grid-area: card3;
+    width: 40vw;
   }
 }
-@media screen and (max-width: 1100px) and (max-width: 720px) {
+@media screen and (max-width: 768px) and (max-width: 375px) {
   body {
     display: grid;
     grid-template-areas: "main";
@@ -147,19 +125,20 @@ body main .right-card .description {
     grid-area: main;
     display: grid;
     grid-row: 10px;
-    grid-template-areas: "left-card" "central-card" "right-card";
+    grid-template-areas: "card1" "card2" "card3";
   }
-  body main .left-card {
-    grid-area: left-card;
-    width: 50vw;
+  body main .card:nth-child(3), body main .card:nth-child(2), body main .card:nth-child(1) {
+    width: 80vw;
+    min-width: fit-content;
   }
-  body main .central-card {
-    grid-area: central-card;
-    width: 50vw;
+  body main .card:nth-child(1) {
+    grid-area: card1;
   }
-  body main .right-card {
-    grid-area: right-card;
-    width: 50vw;
+  body main .card:nth-child(2) {
+    grid-area: card2;
+  }
+  body main .card:nth-child(3) {
+    grid-area: card3;
   }
 }
 

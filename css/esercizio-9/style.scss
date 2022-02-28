@@ -5,21 +5,18 @@
 }
 
 body{
-    height: 100vh;
     display: flex;
     justify-content: center;
     
     main{
-        align-self: center;
+        margin-top: 100px;
         display: flex;
         column-gap: 20px;
         width: fit-content;
 
-        .left-card,
-        .central-card,
-        .right-card{
-            width: 20vw;
-            height: 470px;
+       .card{
+            width: 30vw;
+            min-height: 500px;
             border-radius: 15px;
             background-color: lightgrey;
             
@@ -46,6 +43,7 @@ body{
                        flex:1;
                        height: 50px;
                        display: flex;
+                       justify-content: center;
                        flex-direction: column;
                        
                        .name{
@@ -106,7 +104,7 @@ body{
     }
 }
 
-@media screen and (max-width: 1100px){
+@media screen and (max-width: 768px){
 
     body{
         display: grid;
@@ -117,25 +115,46 @@ body{
             display: grid;
             row-gap: 20px;
             grid-template-areas:
-            "left-card central-card"
-            "right-card .";
+            "card1 card2"
+            "card3 .";
 
-            .left-card{
-                grid-area: left-card;
-                width: 30vw;
+            %left-header{  //extend rule
+                .left-header{
+
+                    .information{
+                        
+                        h3{
+                            font-size: 0.8rem;
+                        }
+                        p{
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
             }
-            .central-card{
-                grid-area: central-card;
-                width: 30vw;
+
+            .card:nth-child(1){
+                grid-area: card1;
+                width: 40vw;
+
+                @extend %left-header;
             }
-            .right-card{
-                grid-area: right-card;
-                width: 30vw;
+            .card:nth-child(2){
+                grid-area: card2;
+                width: 40vw;
+
+                @extend %left-header;
+            }
+            .card:nth-child(3){
+                grid-area: card3;
+                width: 40vw;
+
+                @extend %left-header;
             }
         }
     }  
     
-    @media screen and (max-width: 720px){
+    @media screen and (max-width: 375px){
        body{
            display: grid;
            grid-template-areas: 
@@ -146,21 +165,26 @@ body{
                 display: grid;
                 grid-row: 10px;
                 grid-template-areas: 
-                "left-card"
-                "central-card"
-                "right-card";
+                "card1"
+                "card2"
+                "card3";
+
+                %size{   //extend rule
+                    width: 80vw;
+                    min-width: fit-content;
+                }
     
-                .left-card{
-                    grid-area: left-card;
-                    width: 50vw;
+                .card:nth-child(1){
+                    grid-area: card1;
+                    @extend %size;
                 }
-                .central-card{
-                    grid-area: central-card;
-                    width: 50vw;
+                .card:nth-child(2){
+                    grid-area: card2;
+                    @extend %size;
                 }
-                .right-card{
-                    grid-area: right-card;
-                    width: 50vw;
+                .card:nth-child(3){
+                    grid-area: card3;
+                    @extend %size;
                 }
             }
        }
