@@ -1,28 +1,20 @@
 class BankAccount {
-  #amount = 0;
+  amount = 0;
 
   constructor(initialAmount) {
-    this.#amount = initialAmount;
+    this.amount = initialAmount;
   }
 
   deposit(amount) {
-    this.#amount += amount;
+    this.amount += amount;
   }
 
   withdraw(amount) {
-    this.#amount -= amount;
+    this.amount -= amount;
   }
 
   view() {
-    console.log(this.#amount);
-  }
-
-  getAmount() {
-    return this.#amount;
-  }
-
-  setAmount(amount) {
-    this.#amount += amount;
+    console.log(this.amount);
   }
 }
 
@@ -30,11 +22,11 @@ class BankAccountVip extends BankAccount {
   constructor(initialAmount) {
     super(initialAmount);
   }
-
-  deposit(newamount) {
-    if (this.getAmount() >= 1000) {
-      newamount += (newamount * 3) / 100;
-      this.setAmount(newamount);
+  deposit(amount) {
+    if (this.amount >= 1000) {
+      this.amount += amount + (this.amount * 3) / 100;
+    } else {
+      this.amount += amount;
     }
   }
 }
