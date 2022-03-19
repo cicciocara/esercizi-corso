@@ -19,12 +19,14 @@ class Circle {
 
 class AreaCalculator {
   static calculate(geometricFigure) {
-    if (geometricFigure === square) {
+    if (geometricFigure instanceof Square) {
       return square.side * square.side;
-    } else if (geometricFigure === rectangle) {
+    } else if (geometricFigure instanceof Rectangle) {
       return rectangle.width * rectangle.height;
-    } else if (geometricFigure === circle) {
+    } else if (geometricFigure instanceof Circle) {
       return circle.radius * circle.radius * 3.14;
+    } else {
+      return `it isn't an istance of declared geometrical figure`;
     }
   }
 }
