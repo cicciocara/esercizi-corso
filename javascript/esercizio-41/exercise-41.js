@@ -6,35 +6,31 @@ class BankAccount {
   }
 
   deposit(amount) {
-    try {
-      if (amount < 0) {
-        console.log("Error, deposit amount is negative");
-      } else {
-        this.#amount += amount;
+    if (amount < 0) {
+      try {
+        throw new Error("The deposit amount cannot be negative");
+      } catch (err) {
+        console.log(err);
       }
-    } catch (err) {
-      console.log("name:", err.name);
-      console.log("message:", err.message);
-      console.log("stack:", err.stack);
+    } else {
+      this.#amount += amount;
     }
   }
 
   withdraw(amount) {
-    try {
-      if (amount < 0 || amount > this.#amount) {
-        console.log("Error, witdraw amount is negative or over actual amount");
-      } else {
-        this.#amount -= amount;
+    if (amount < 0 || this.#amount < amount) {
+      try {
+        throw new Error("The withdraw amount cannot be negative or over actual amount");
+      } catch (err) {
+        console.log(err);
       }
-    } catch (err) {
-      console.log("name:", err.name);
-      console.log("message:", err.message);
-      console.log("stack:", err.stack);
+    } else {
+      this.#amount -= amount;
     }
   }
 
   view() {
-    console.log("Actual bank amount: " + this.#amount);
+    console.log(this.#amount);
   }
 }
 
