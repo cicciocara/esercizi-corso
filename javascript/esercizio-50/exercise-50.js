@@ -10,8 +10,9 @@ class Person {
     return JSON.stringify(this);
   }
 
-  static fromJson(json) {
-    return JSON.parse(json);
+  static fromJson(jsonFile) {
+    let { id, firstName, lastName, age } = JSON.parse(jsonFile);
+    return new Person(id, firstName, lastName, age);
   }
 }
 
