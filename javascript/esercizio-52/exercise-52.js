@@ -5,10 +5,13 @@ const person = {
   age: 25,
 };
 
-Object.keys(person).forEach((key) => {
-  if (!Number(person[key])) delete person[key];
-});
+function replacer(key, value) {
+  if (typeof value === "string") {
+    return undefined;
+  }
+  return value;
+}
 
-const json = JSON.stringify(person);
+const json = JSON.stringify(person, replacer);
 
 console.log(json); // Should return: { id: 1, age: 25 }
