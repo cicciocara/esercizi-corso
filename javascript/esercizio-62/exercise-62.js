@@ -19,7 +19,7 @@ const persons = [
   },
 ];
 
-async function fetchPersonById(id) {
+function fetchPersonById(id) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const person = persons.find((item) => item.id === id);
