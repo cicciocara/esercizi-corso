@@ -1,0 +1,27 @@
+<html>
+  <body>
+    <div id="container" style="display: flex; align-items: center"></div>
+  </body>
+</html>
+
+<script>
+  async function addElements() {
+    const divEl = document.querySelector("div");
+
+    await fetch("https://jsonplaceholder.typicode.com/todos/4")
+      .then((response) => response.json())
+      .then((data) => (todo4 = data));
+
+    let h2El = document.createElement("h2");
+    h2El.innerText = todo4.title;
+
+    let inptEl = document.createElement("input");
+    inptEl.setAttribute("type", "checkbox");
+    inptEl.checked = todo4.completed;
+
+    divEl.appendChild(h2El);
+    divEl.appendChild(inptEl);
+  }
+
+  window.addEventListener("load", addElements);
+</script>
