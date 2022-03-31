@@ -1,0 +1,27 @@
+<html>
+  <body>
+    <div id="container">
+      <ul class="todo-list"></ul>
+    </div>
+  </body>
+</html>
+
+<script>
+  let list;
+
+  async function dynamicList() {
+    let ulEl = document.querySelector(".todo-list");
+
+    await fetch("https://jsonplaceholder.typicode.com/todos")
+      .then((response) => response.json())
+      .then((data) => (list = data));
+
+    list.forEach((todo) => {
+      let liEl = document.createElement("li");
+      liEl.innerText = todo.title;
+      ulEl.appendChild(liEl);
+    });
+  }
+
+  window.addEventListener("load", dynamicList);
+</script>
