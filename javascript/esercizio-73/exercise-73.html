@@ -11,30 +11,37 @@
 </html>
 
 <script>
-  const table = document.querySelector("table");
+  const table = document.getElementById("person-table");
+  const tableHead = document.createElement("thead");
   const tableBody = document.querySelector("tbody");
   const btn = document.getElementById("add-row");
 
-  const th1 = document.createElement("th");
-  th1.innerText = "firstName";
-  const th2 = document.createElement("th");
-  th2.innerText = "lastName";
-  const th3 = document.createElement("th");
-  th3.innerText = "age";
+  let tableRowHead = document.createElement("tr");
+  let tableDataFirstName = document.createElement("td");
+  let tableDataLastName = document.createElement("td");
+  let tableDataAge = document.createElement("td");
 
-  table.appendChild(th1);
-  table.appendChild(th2);
-  table.appendChild(th3);
+  tableDataFirstName.textContent = "firstName";
+  tableDataLastName.textContent = "lastName";
+  tableDataAge.textContent = "age";
 
-  const columnTable = [th1, th2, th3];
+  tableRowHead.appendChild(tableDataFirstName);
+  tableDataFirstName.insertAdjacentElement("afterend", tableDataLastName);
+  tableDataLastName.insertAdjacentElement("afterend", tableDataAge);
 
-  function addRow(columnTable) {
-    const tableRow = document.createElement("tr");
-    for (let field of columnTable) {
-      tableData = document.createElement("td");
-      tableData = field;
+  tableHead.appendChild(tableRowHead);
+  table.insertBefore(tableHead, tableBody);
+
+  function addRow() {
+    let tableRow = document.createElement("tr");
+    let tableHeader = ["firstName", "lastName", "age"];
+
+    for (let field of tableHeader) {
+      let tableData = document.createElement("td");
+      tableData.textContent = "value";
       tableRow.appendChild(tableData);
     }
+    tableBody.appendChild(tableRow);
   }
-  btn.addEventListener("click", addRow(columnTable));
+  btn.addEventListener("click", addRow);
 </script>
