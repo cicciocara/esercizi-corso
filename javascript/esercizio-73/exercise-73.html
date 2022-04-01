@@ -1,0 +1,47 @@
+<html>
+  <body>
+    <div id="container">
+      <h2>Person's List</h2>
+      <table id="person-table">
+        <tbody></tbody>
+      </table>
+      <button id="add-row">Add row</button>
+    </div>
+  </body>
+</html>
+
+<script>
+  const table = document.getElementById("person-table");
+  const tableHead = document.createElement("thead");
+  const tableBody = document.querySelector("tbody");
+  const btn = document.getElementById("add-row");
+
+  let tableRowHead = document.createElement("tr");
+  let tableDataFirstName = document.createElement("td");
+  let tableDataLastName = document.createElement("td");
+  let tableDataAge = document.createElement("td");
+
+  tableDataFirstName.textContent = "firstName";
+  tableDataLastName.textContent = "lastName";
+  tableDataAge.textContent = "age";
+
+  tableRowHead.appendChild(tableDataFirstName);
+  tableDataFirstName.insertAdjacentElement("afterend", tableDataLastName);
+  tableDataLastName.insertAdjacentElement("afterend", tableDataAge);
+
+  tableHead.appendChild(tableRowHead);
+  table.insertBefore(tableHead, tableBody);
+
+  function addRow() {
+    let tableRow = document.createElement("tr");
+    let tableHeader = ["firstName", "lastName", "age"];
+
+    for (let field of tableHeader) {
+      let tableData = document.createElement("td");
+      tableData.textContent = "value";
+      tableRow.appendChild(tableData);
+    }
+    tableBody.appendChild(tableRow);
+  }
+  btn.addEventListener("click", addRow);
+</script>
