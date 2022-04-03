@@ -21,15 +21,18 @@
 
 <script>
   const allInpt = document.querySelectorAll("input");
-  allInpt.forEach((inpt) => (input = inpt));
+  let inptValue = [];
+  allInpt.forEach((inpt) => {
+    inptValue.push(inpt.value);
+  });
 
   let person = {
-    firstName,
-    lastName,
-    age,
+    firstName: inptValue[0],
+    lastName: inptValue[1],
+    age: inptValue[2],
   };
 
   const form = document.querySelector("form");
   form.setAttribute("data-person", JSON.stringify(person));
-  console.log(form);
+  //console.log(form);
 </script>
