@@ -1,0 +1,53 @@
+<html>
+  <body>
+    <div id="container">
+      <h2>Person's Form</h2>
+      <form id="person-form">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  const personForm = document.getElementById("person-form");
+  const btn = document.querySelector("button");
+  let firstNameInpt;
+  let lastNameInpt;
+  let age;
+
+  function initForm() {
+    const firstName = document.createElement("input");
+    firstName.type = "text";
+    firstName.id = "firstName";
+    personForm.insertBefore(firstName, btn);
+    firstName.insertAdjacentHTML("beforebegin", "<label>First Name: </label>");
+    firstNameInpt = firstName.value;
+
+    const lastName = document.createElement("input");
+    lastName.type = "text";
+    lastName.id = "lastName";
+    personForm.insertBefore(lastName, btn);
+    lastName.insertAdjacentHTML("beforebegin", "<label>Last Name: </label>");
+
+    const age = document.createElement("input");
+    age.type = "text";
+    age.id = "age";
+    personForm.insertBefore(age, btn);
+    age.insertAdjacentHTML("beforebegin", "<label>Age: </label>");
+  }
+
+  function submitPersonForm(event) {
+    event.preventDefault();
+    let person = {
+      firstName: document.getElementById("firstName").value,
+      lastName: document.getElementById("lastName").value,
+      age: document.getElementById("age").value,
+    };
+
+    console.log(person);
+  }
+
+  btn.addEventListener("click", submitPersonForm);
+  window.addEventListener("load", initForm);
+</script>
