@@ -12,8 +12,8 @@
   const fetchPost = document.getElementById("fetch-post");
   const postTitle = document.getElementById("post-title");
 
-  fetchPost.addEventListener("click", () => {
-    const title = localStorage.getItem("title");
+  fetchPost.addEventListener("click", async () => {
+    const title = await localStorage.getItem("title");
     postTitle.textContent = title;
   });
 </script>
