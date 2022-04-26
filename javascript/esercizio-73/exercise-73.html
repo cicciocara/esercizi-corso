@@ -16,29 +16,35 @@
   const tableBody = document.querySelector("tbody");
   const btn = document.getElementById("add-row");
 
-  let tableRowHead = document.createElement("tr");
-  let tableDataFirstName = document.createElement("td");
-  let tableDataLastName = document.createElement("td");
-  let tableDataAge = document.createElement("td");
+  function thead() {
+    if (thead.fired) return;
+    thead.fired = true;
+    let tableRowHead = document.createElement("tr");
+    let tableDataFirstName = document.createElement("td");
+    let tableDataLastName = document.createElement("td");
+    let tableDataAge = document.createElement("td");
 
-  tableDataFirstName.textContent = "firstName";
-  tableDataLastName.textContent = "lastName";
-  tableDataAge.textContent = "age";
+    tableDataFirstName.textContent = "firstName";
+    tableDataLastName.textContent = "lastName";
+    tableDataAge.textContent = "age";
 
-  tableRowHead.appendChild(tableDataFirstName);
-  tableDataFirstName.insertAdjacentElement("afterend", tableDataLastName);
-  tableDataLastName.insertAdjacentElement("afterend", tableDataAge);
+    tableRowHead.appendChild(tableDataFirstName);
+    tableDataFirstName.insertAdjacentElement("afterend", tableDataLastName);
+    tableDataLastName.insertAdjacentElement("afterend", tableDataAge);
 
-  tableHead.appendChild(tableRowHead);
-  table.insertBefore(tableHead, tableBody);
+    tableHead.appendChild(tableRowHead);
+    table.insertBefore(tableHead, tableBody);
+  }
 
   function addRow() {
+    thead();
     let tableRow = document.createElement("tr");
     let tableHeader = ["firstName", "lastName", "age"];
 
     for (let field of tableHeader) {
       let tableData = document.createElement("td");
-      tableData.textContent = "value";
+      let input = document.createElement("input");
+      tableData.appendChild(input);
       tableRow.appendChild(tableData);
     }
     tableBody.appendChild(tableRow);
