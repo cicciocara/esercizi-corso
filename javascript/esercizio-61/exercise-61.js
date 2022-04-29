@@ -1,20 +1,20 @@
 const persons = [
   {
     id: 1,
-    firstName: "Mario",
-    lastName: "Rossi",
+    firstName: 'Mario',
+    lastName: 'Rossi',
     age: 25,
   },
   {
     id: 2,
-    firstName: "Maria",
-    lastName: "Verdi",
+    firstName: 'Maria',
+    lastName: 'Verdi',
     age: 32,
   },
   {
     id: 3,
-    firstName: "Giovanni",
-    lastName: "Rossi",
+    firstName: 'Giovanni',
+    lastName: 'Rossi',
     age: 35,
   },
 ];
@@ -22,15 +22,15 @@ const persons = [
 const jobs = [
   {
     id: 1,
-    jobTitle: "CEO",
+    jobTitle: 'CEO',
   },
   {
     id: 2,
-    jobTitle: "Project Manager",
+    jobTitle: 'Project Manager',
   },
   {
     id: 3,
-    jobTitle: "Developer",
+    jobTitle: 'Developer',
   },
 ];
 
@@ -45,9 +45,11 @@ function fetchPersonById(id) {
 
 function fetchJobById(id) {
   return new Promise((resolve) => {
-    const job = jobs.find((job) => job.id === id);
-    resolve(job);
-  }, 500);
+    setTimeout(() => {
+      const job = jobs.find((job) => job.id === id);
+      resolve(job);
+    }, 500);
+  });
 }
 
-Promise.all([fetchPersonById(2)]).then((person) => console.log(person));
+Promise.race([fetchJobById(2), fetchPersonById(2)]).then((response) => console.log(response));
